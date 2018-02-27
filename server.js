@@ -68,13 +68,13 @@ app.get("/api/:characters?", function(req, res) {
 
 });
 
-app.delete("/api", function(req, res) {
+app.post("/api/clear", function() {
 
   resList = [];
   waitList = [];
   both = [resList, waitList];
 
-  res.json(both);
+  console.log()
 });
 
 app.post("/api/new", function(req, res) {

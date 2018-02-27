@@ -64,6 +64,8 @@
         <h5><a href="/api/reserve">API Table Link</a></h5>
         <h5> | </h5>
         <h5><a href="/api/waitlist">API Wait List</a></h5>
+        <h5> | </h5>
+        <h5><a href="/tables" id="deleteButton">Delete</a></h5>
       </div>
     </div>
   </div>
@@ -104,6 +106,21 @@
         }
 
       });
+    });
+
+    function clear() {
+
+      var currentURL = window.location.origin;
+      $.ajax({ url: currentURL + "/api/clear", method: "POST"})
+
+    }
+
+    $("#deleteButton").on("click", function() {
+
+        alert("Clearing data.....")
+        clear();
+
+        location.reload();
     });
   </script>
 
