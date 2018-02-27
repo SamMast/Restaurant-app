@@ -74,28 +74,27 @@ app.post("/api/clear", function() {
   waitList = [];
   both = [resList, waitList];
 
-  console.log()
 });
 
 app.post("/api/new", function(req, res) {
 
   var newReservation = req.body;
-
-  // newReservation.customerID = newReservation.customerID.replace(/\s+/g, "").toLowerCase();
   
   console.log(newReservation);
 
   if (resList.length < 5) {
     
     resList.push(newReservation);
+    res.json(true);
+
 
   } else {
 
     waitList.push(newReservation);
+    res.json(false);
 
   }
 
-  res.json(newReservation);
 });
 
 // Starts the server to begin listening

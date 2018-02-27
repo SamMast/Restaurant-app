@@ -48,7 +48,7 @@
             <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
             <hr>
 
-            <a href="/reservation"><button type="button" class="btn btn-danger btn-lg main"><span class="glyphicon glyphicon-align-justify"></span> View Tables</button></a>
+            <a href="/tables"><button type="button" class="btn btn-danger btn-lg main"><span class="glyphicon glyphicon-align-justify"></span> View Tables</button></a>
             <a href="/"><button type="button" class="btn btn-default btn-lg main"><span class="glyphicon glyphicon-home"></span></button></a>
 <!--             <a href="/"><button type="button" class="btn btn-danger btn-lg main"><span class="glyphicon glyphicon-credit-card"></span> Reservation</button></a>
  -->        </div>
@@ -111,7 +111,13 @@
             $.post("/api/new", newReservation)
                 .then(function(data) {
                     console.log(data);
+                    if (data) {
                     alert("Adding reservation...");
+
+                    } else if (!data) {
+                    alert("Reservations full. Adding to waitlist...");
+
+                    }
                 });
         });
     </script>
