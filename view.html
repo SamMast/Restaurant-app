@@ -71,12 +71,10 @@
   </div>
 
   <script type="text/javascript">
-    // Question: What does this code do?
-        //this code grabs the user inputs from the form after user clicks
-        // submit button
+
     $(document).ready(function() {
       $.get("/api/reservation", function(data) {
-        //console.log(data);
+
         for (var i = 0; i < data.length; i++) {
           var wellSection = $("<div>");
           wellSection.addClass("well");
@@ -92,7 +90,7 @@
       });
 
       $.get("/api/waitlist", function(data) {
-        console.log(data);
+
         for (var i = 0; i < data.length; i++) {
           var wellSection2 = $("<div>");
           wellSection2.addClass("well");
@@ -117,7 +115,7 @@
 
     $("#deleteButton").on("click", function() {
 
-        alert("Clearing data.....")
+        alert("Clearing Reservations.....")
         clear();
 
         location.reload();
